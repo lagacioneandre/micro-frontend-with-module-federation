@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shell';
+
+  private readonly router = inject(Router);
+
+  products() {
+    this.router.navigate(['products']);
+  }
+
+  users() {
+    this.router.navigate(['users']);
+  }
 }
